@@ -1,18 +1,11 @@
 import { useEffect } from 'react';
 import classes from './main.module.less';
 
-import Food from '../../class/Food.ts';
-import ScorePanel from '../../class/ScorePanel.ts';
+import GameControl from '../../class/GameControl.ts';
 
 export default function Main() {
     useEffect(() => {
-        const food = new Food();
-        food.changeFoodPos();
-
-        const scorePanel = new ScorePanel();
-        for (let i = 0; i < 20; i++) {
-            scorePanel.addScore();
-        }
+        const gameControl = new GameControl();
     }, []);
 
     return (
