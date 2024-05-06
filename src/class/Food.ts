@@ -21,6 +21,4 @@ class Food {
     }
 }
 
-export default () => {
-    return { Food };
-};
+export default Food
