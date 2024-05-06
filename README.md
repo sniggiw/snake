@@ -1,2 +1,2 @@
 # snake
-use ts to make a snake game
+use react + ts to make a snake game
