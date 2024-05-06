@@ -1,7 +1,15 @@
-import React from 'react';
+import { useEffect } from 'react';
 import classes from './main.module.less';
 
+import classFood from '../../class/Food.ts';
+
 export default function Main() {
+    const { Food } = classFood();
+    useEffect(() => {
+        const food = new Food();
+        food.changeFoodPos();
+    }, []);
+
     return (
         <div className={classes.main}>
             <div id="stage" className={classes.stage}>
