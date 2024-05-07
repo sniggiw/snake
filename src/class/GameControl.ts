@@ -25,7 +25,24 @@ class GameControl {
     }
 
     keydownHandler(e: KeyboardEvent) {
-        this.direction = e.key;
+        switch (e.key) {
+            case 'ArrowUp':
+            case 'Up':
+                this.direction = 'Up';
+                break;
+            case 'ArrowDown':
+            case 'Down':
+                this.direction = 'Down';
+                break;
+            case 'ArrowLeft':
+            case 'Left':
+                this.direction = 'Left';
+                break;
+            case 'ArrowRight':
+            case 'Right':
+                this.direction = 'Right';
+                break;
+        }
     }
 
     run() {
@@ -62,7 +79,7 @@ class GameControl {
             this.isLive = false;
         }
 
-        this.isLive && setTimeout(this.run.bind(this), 900 - (this.scorePanel.level - 1) * 90);
+        this.isLive && setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30);
     }
 
     checkEat(x: number, y: number) {
