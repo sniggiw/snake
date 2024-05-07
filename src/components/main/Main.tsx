@@ -7,6 +7,7 @@ export default function Main() {
     useEffect(() => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const gameControl = new GameControl();
+        console.log('gameControl', gameControl);
     }, []);
 
     return (
