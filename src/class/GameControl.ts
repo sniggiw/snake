@@ -13,7 +13,7 @@ class GameControl {
 
     constructor() {
         this.food = new Food();
-        this.scorePanel = new ScorePanel();
+        this.scorePanel = new ScorePanel(10, 5);
         this.snake = new Snake();
 
         this.init();
@@ -79,7 +79,7 @@ class GameControl {
             this.isLive = false;
         }
 
-        this.isLive && setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30);
+        this.isLive && setTimeout(this.run.bind(this), 100 - (this.scorePanel.level - 1) * 10);
     }
 
     checkEat(x: number, y: number) {

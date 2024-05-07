@@ -75,7 +75,7 @@ class Snake {
         for (let i = 1; i < this.bodies.length; i++) {
             const bd = this.bodies[i] as HTMLElement;
             if (this.headX === bd.offsetLeft && this.headY === bd.offsetTop) {
-                throw new Error('GAME OVER!请刷新页面重新开始！');
+                throw new Error('GAME OVER!');
             }
         }
     }
