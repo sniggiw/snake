@@ -51,10 +51,26 @@ class GameControl {
                 break;
         }
 
-        this.snake.headX = currentX;
-        this.snake.headY = currentY;
+        this.checkEat(currentX, currentY);
 
-        // this.isLive && setTimeout(this.run.bind(this), 900 - (this.scorePanel.level - 1) * 90);
+        try {
+            this.snake.headX = currentX;
+            this.snake.headY = currentY;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (e: any) {
+            alert(e.message + '请刷新页面重新开始！');
+            this.isLive = false;
+        }
+
+        this.isLive && setTimeout(this.run.bind(this), 900 - (this.scorePanel.level - 1) * 90);
+    }
+
+    checkEat(x: number, y: number) {
+        if (x === this.food.foodX && y === this.food.foodY) {
+            this.food.changeFoodPos();
+            this.scorePanel.addScore();
+            this.snake.addBody();
+        }
     }
 }
 export default GameControl;

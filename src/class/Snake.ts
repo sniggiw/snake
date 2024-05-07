@@ -18,10 +18,22 @@ class Snake {
     }
 
     set headX(value: number) {
+        if (this.headX === value) {
+            return;
+        }
+        if (value < 0 || value > 290) {
+            throw new Error('GAME OVER!');
+        }
         this.head.style.left = value + 'px';
     }
 
     set headY(value: number) {
+        if (this.headY === value) {
+            return;
+        }
+        if (value < 0 || value > 290) {
+            throw new Error('GAME OVER!');
+        }
         this.head.style.top = value + 'px';
     }
 

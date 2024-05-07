@@ -4,11 +4,11 @@ class Food {
         this.element = document.getElementById('food')!;
     }
 
-    get X() {
+    get foodX() {
         return this.element.offsetLeft;
     }
 
-    get Y() {
+    get foodY() {
         return this.element.offsetTop;
     }
 
@@ -21,4 +21,4 @@ class Food {
     }
 }
 
-export default Food
+export default Food;
